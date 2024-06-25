@@ -3,18 +3,18 @@ import os
 
 # Read the video file
 #vidcap = cv2.VideoCapture('C:\\Users\\OMOLP091\\Documents\\OMOTECH\RESEARCH\\TRAFFIC-PROJECT-SAMARTH_GUPTA\\TESTING-AMEY-SIR\\TESTING-RESULTS\\SCENARIO-3\\Scenario-3-Results-2.mp4')
-vidcap = cv2.VideoCapture("C:\\Users\\OMOLP091\\Documents\\OMOTECH\RESEARCH\\VANIA_GOEL_BHARATHNATYAM_USING_OPENCV\\Thatti Mettu Adavu ｜ Kalakshetra Style ｜ Neha Chemmanoor.mp4")
+vidcap = cv2.VideoCapture("C:\\Users\\OMOLP091\\Documents\\GitHub\\bhartnatyam-repo-new\\Thatti Mettu Adavu ｜ Kalakshetra Style ｜ Neha Chemmanoor.mp4")
 
 # Get the frames per second (fps) of the video
 fps = vidcap.get(cv2.CAP_PROP_FPS)
 print(f"Frames per second: {fps}")
 
 # Calculate the number of frames to skip (5 seconds interval)
-frames_to_skip = int(fps * 2)
+frames_to_skip = int(fps * 0.1)
 print(f"Frames to skip: {frames_to_skip}")
 
 # Create an output directory to save the frames
-output_dir = 'C:\\Users\\OMOLP091\\Documents\\OMOTECH\RESEARCH\\VANIA_GOEL_BHARATHNATYAM_USING_OPENCV\\video_output_images'
+output_dir = 'C:\\Users\\OMOLP091\\Documents\\GitHub\\bhartnatyam-repo-new\\video_output_images_1'
 if not os.path.exists(output_dir):
     os.makedirs(output_dir)
 
@@ -35,7 +35,7 @@ while True:
     resized_image = cv2.resize(image, (640, 480))
 
     # Save the frame as a JPEG image in the output directory
-    frame_filename = f'{output_dir}/frame_{saved_frame_count:04d}.jpg'
+    frame_filename = f'{output_dir}/Class 1 - Thatti Mettu Adavu_{saved_frame_count:04d}.jpg'
     cv2.imwrite(frame_filename, resized_image)
 
     # Increment the frame count by the number of frames to skip
